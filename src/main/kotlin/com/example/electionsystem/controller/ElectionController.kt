@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping(path = ["/api/elections/candidate"])
+@RequestMapping(path = ["/api/elections/candidates"])
 class ElectionController(
     val candidateService: CandidateService, val voteService: VoteService,
 ) {
