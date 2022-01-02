@@ -4,7 +4,6 @@ import com.example.electionsystem.dto.CandidateDto
 import com.example.electionsystem.dto.RegionDto
 import com.example.electionsystem.dto.VoteDto
 import com.example.electionsystem.dto.VoteReqDto
-import com.example.electionsystem.model.Candidate
 import com.example.electionsystem.service.CandidateService
 import com.example.electionsystem.service.VoteService
 import org.springframework.http.HttpStatus
