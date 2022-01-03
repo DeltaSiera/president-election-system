@@ -14,8 +14,8 @@
 
 ## Fetch all candidates
 
-**method: GET**  
-**RESPONSE**
+**Method: GET**  
+**Response**
 
 - `200   OK` **successful case**
 
@@ -53,7 +53,7 @@
 
 ## Register a new vote ##
 
-**method: POST**
+**Method: POST**
 
 **Important thing to know that there is no option to register a voter. There is a list of free voters which can be use
 to test `POST` method.**  
@@ -70,7 +70,7 @@ to test `POST` method.**
 
 ```json
 {
-  "errorMessage": "A vote has already been cast by the voter 122211"
+  "errorMessage": "12345678 have already voted for another candidate!"
 }
 ```
 
@@ -81,10 +81,11 @@ to test `POST` method.**
   "errorMessage": "Candidate 0 does not exist!"
 }
 ```
+
 - `404 NOT_FOUND` **means a voter with such ID does not exist in database**
 
 ```json
 {
-  "errorMessage": "Candidate 0 does not exist!"
+  "errorMessage": "Voter 0 does not exist!!"
 }
 ```
