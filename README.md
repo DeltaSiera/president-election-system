@@ -57,7 +57,8 @@
 
 **Important thing to know that there is no option to register a voter. There is a list of free voters which can be use
 to test `POST` method.**  
-**Definition**`/vote`
+**List of free voters** : **18592670, 55847192, 21493527, 47940696, 76084819, 39229712, 49659417, 75119512, 66446643**  
+**Definition**`/vote`  
 **Arguments**
 
 - `"candidateNumber": integer` **a number of candidate on the list of all candidates**
@@ -101,6 +102,7 @@ to test `POST` method.**
 # Voting results #
 
 ## Overall distribution of votes amongst candidates ##
+
 **Method: GET**  
 **Definition**`/votes`
 
@@ -154,6 +156,7 @@ to test `POST` method.**
 ```
 
 # Voting distribution amongst different regions
+
 **Method: GET**  
 **Definition**`/votes/regions`
 **Response**
@@ -200,6 +203,7 @@ to test `POST` method.**
 ```
 
 # Winner Candidate #
+
 **Method: GET**  
 **Definition**`/winner`
 
@@ -209,13 +213,14 @@ to test `POST` method.**
 
 ```json
 [
-    {
-        "number": 5,
-        "name": "Legolas Elf",
-        "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
-    }
+  {
+    "number": 5,
+    "name": "Legolas Elf",
+    "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
+  }
 ]
 ```
+
 **Method: GET**  
 **Definition**`/winner`
 
@@ -225,15 +230,15 @@ to test `POST` method.**
 
 ```json
 [
-    {
-        "number": 5,
-        "name": "Legolas Elf",
-        "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
-    },
-    {
-        "number": 4,
-        "name": "Gimli  Fearless dwarf",
-        "agenda": "Son of Glóin, a member of Thorin's company"
-    }
+  {
+    "number": 5,
+    "name": "Legolas Elf",
+    "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
+  },
+  {
+    "number": 4,
+    "name": "Gimli  Fearless dwarf",
+    "agenda": "Son of Glóin, a member of Thorin's company"
+  }
 ]
 ```
