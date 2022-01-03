@@ -9,7 +9,7 @@
 **There are pre-defined information inside data.sql file;**
 
 # How to use the system ?
-**Run** : `./gradlew bootRun`  
+**Run**: `./gradlew bootRun`  
 **URL:** `localhost:8080/api/elections/candidates`
 
 ## Fetch all candidates
@@ -58,7 +58,7 @@
 **Important thing to know that there is no option to register a voter. There is a list of free voters which can be use
 to test `POST` method.**  
 **List of free voters** : **18592670, 55847192, 21493527, 47940696, 76084819, 39229712, 49659417, 75119512, 66446643**  
-**Definition**`/vote`  
+**Path**`/vote`  
 **Arguments**
 
 - `"candidateNumber": integer` **a number of candidate on the list of all candidates**
@@ -104,7 +104,7 @@ to test `POST` method.**
 ## Overall distribution of votes amongst candidates ##
 
 **Method: GET**  
-**Definition**`/votes`
+**Path**`/votes`
 
 **Response**
 
@@ -158,7 +158,7 @@ to test `POST` method.**
 # Voting distribution amongst different regions
 
 **Method: GET**  
-**Definition**`/votes/regions`
+**Path**`/votes/regions`
 **Response**
 
 - `200 OK`
@@ -205,7 +205,7 @@ to test `POST` method.**
 # Winner Candidate #
 
 **Method: GET**  
-**Definition**`/winner`
+**Path**`/winner`
 
 **Response**
 
@@ -222,7 +222,7 @@ to test `POST` method.**
 ```
 
 **Method: GET**  
-**Definition**`/winner`
+**Path**`/winner`
 
 **Response**
 
