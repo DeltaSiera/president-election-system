@@ -205,7 +205,7 @@ to test `POST` method.**
 
 **Response**
 
-- `200 OK`
+- `200 OK` **situation when there is only one winner**
 
 ```json
 [
@@ -213,6 +213,27 @@ to test `POST` method.**
         "number": 5,
         "name": "Legolas Elf",
         "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
+    }
+]
+```
+**Method: GET**  
+**Definition**`/winner`
+
+**Response**
+
+- `200 OK` **situation when there are two candidates which have the highest amount of votes**
+
+```json
+[
+    {
+        "number": 5,
+        "name": "Legolas Elf",
+        "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
+    },
+    {
+        "number": 4,
+        "name": "Gimli  Fearless dwarf",
+        "agenda": "Son of Glóin, a member of Thorin's company"
     }
 ]
 ```
