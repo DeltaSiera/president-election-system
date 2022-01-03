@@ -60,8 +60,16 @@ to test `POST` method.**
 **Definition**`/vote`
 **Arguments**
 
-- `"candidateNumber": integer` a number of candidate on the list of all candidates
-- `"Id": integer` Identification number of a voter
+- `"candidateNumber": integer` **a number of candidate on the list of all candidates**
+- `"Id": integer` **Identification number of a voter**
+- **Request body**
+
+```json
+{
+  "candidateNumber": 4,
+  "Id": 66446643
+}
+```
 
 **Response**
 
@@ -91,11 +99,15 @@ to test `POST` method.**
 ```
 
 # Voting results #
+
 ## Overall distribution of votes amongst candidates ##
+
 **Definition**`/votes`
 
 **Response**
+
 - `200 OK ` **means that there is a list returned with information about candidate and his votes count**
+
 ```json
 [
   {
@@ -138,5 +150,69 @@ to test `POST` method.**
     },
     "votesCount": 24
   }
+]
+```
+
+# Voting distribution amongst different regions
+**Method: GET**  
+**Definition**`/votes/regions`
+**Response**
+
+- `200 OK`
+
+```json
+[
+  {
+    "region": "ERIADOR",
+    "votes": [
+      {
+        "candidate": {
+          "number": 3,
+          "name": "Saruman Wizard",
+          "agenda": "Leader of the Istari"
+        },
+        "votesCount": 3
+      },
+      {
+        "candidate": {
+          "number": 4,
+          "name": "Gimli  Fearless dwarf",
+          "agenda": "Son of Glóin, a member of Thorin's company"
+        },
+        "votesCount": 6
+      }
+    ]
+  },
+  {
+    "region": "GONDOR",
+    "votes": [
+      {
+        "candidate": {
+          "number": 5,
+          "name": "Legolas Elf",
+          "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
+        },
+        "votesCount": 5
+      }
+    ]
+  }
+]
+```
+
+# Winner Candidate #
+**Method: GET**  
+**Definition**`/winner`
+
+**Response**
+
+- `200 OK`
+
+```json
+[
+    {
+        "number": 5,
+        "name": "Legolas Elf",
+        "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
+    }
 ]
 ```
