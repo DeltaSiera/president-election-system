@@ -9,7 +9,7 @@
 **There are pre-defined information inside data.sql file;**
 
 # How to use the system ?
-
+**Run** : `./gradlew bootRun`  
 **URL: "/api/elections/candidates"**
 
 ## Fetch all candidates
