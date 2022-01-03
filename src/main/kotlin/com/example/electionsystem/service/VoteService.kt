@@ -39,7 +39,7 @@ class VoteService(
     }
 
     fun checkIfVoteIsPresent(voter: Voter) {
-        require(voteRepo.findByVoter(voter) == null) { "${voter.Id} vote was given to another candidate!" }
+        require(voteRepo.findByVoter(voter) == null) { "${voter.Id} have already voted for another candidate!" }
     }
 
 
