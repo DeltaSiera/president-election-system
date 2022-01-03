@@ -49,7 +49,7 @@
 ]
 ```
 
-## Voting for the particular candidate ##
+# Voting for the particular candidate #
 
 ## Register a new vote ##
 
@@ -57,7 +57,7 @@
 
 **Important thing to know that there is no option to register a voter. There is a list of free voters which can be use
 to test `POST` method.**  
-**Definition**`/votes`
+**Definition**`/vote`
 **Arguments**
 
 - `"candidateNumber": integer` a number of candidate on the list of all candidates
@@ -88,4 +88,55 @@ to test `POST` method.**
 {
   "errorMessage": "Voter 0 does not exist!!"
 }
+```
+
+# Voting results #
+## Overall distribution of votes amongst candidates ##
+**Definition**`/votes`
+
+**Response**
+- `200 OK ` **means that there is a list returned with information about candidate and his votes count**
+```json
+[
+  {
+    "candidate": {
+      "number": 1,
+      "name": "Aragorn The first",
+      "agenda": "Ranger of the North. Heir of Isildur"
+    },
+    "votesCount": 19
+  },
+  {
+    "candidate": {
+      "number": 2,
+      "name": "Gandalf from Gandálfr",
+      "agenda": "Wizard and the bearer of one of the Three Rings"
+    },
+    "votesCount": 13
+  },
+  {
+    "candidate": {
+      "number": 3,
+      "name": "Saruman Wizard",
+      "agenda": "Leader of the Istari"
+    },
+    "votesCount": 13
+  },
+  {
+    "candidate": {
+      "number": 4,
+      "name": "Gimli  Fearless dwarf",
+      "agenda": "Son of Glóin, a member of Thorin's company"
+    },
+    "votesCount": 22
+  },
+  {
+    "candidate": {
+      "number": 5,
+      "name": "Legolas Elf",
+      "agenda": "Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship"
+    },
+    "votesCount": 24
+  }
+]
 ```
