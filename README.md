@@ -74,7 +74,7 @@ to test `POST` method.**
 **Response**
 
 - `201   CREATED` **means the vote is registered**
-- `403  FORBIDED` **if users tries to vote again**
+- `403  FORBIDED` **if user tries to vote again**
 
 ```json
 {
@@ -101,7 +101,7 @@ to test `POST` method.**
 # Voting results #
 
 ## Overall distribution of votes amongst candidates ##
-
+**Method: GET**  
 **Definition**`/votes`
 
 **Response**
