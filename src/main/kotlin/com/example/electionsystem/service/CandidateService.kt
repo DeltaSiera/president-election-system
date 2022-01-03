@@ -32,7 +32,6 @@ class CandidateService(
                 .map(::mapToCandidateDto)
 
     fun findWinningCandidates(candidates: Map<Candidate, Int>): List<Candidate> {
-        val maxVotes = getHighestNumberOfVotes(candidates)
         val totalVotes = getTotalVotes(candidates)
 
         candidates.forEach { (candidate, votes) ->
@@ -44,7 +43,7 @@ class CandidateService(
 
         val winners = candidates.toList()
                 .sortedByDescending { (_, voteCount) -> voteCount }
-                .filter { it.second.toDouble() == maxVotes }
+                .take(MOST_VOTED_CANDIDATES_AMOUNT)
                 .map { it.first }
 
         return when {
