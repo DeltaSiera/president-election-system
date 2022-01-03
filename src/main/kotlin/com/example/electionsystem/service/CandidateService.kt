@@ -54,9 +54,6 @@ class CandidateService(
 
     private fun calcVoteShare(votes: Int, totalVotes: Double) = ((votes / totalVotes) * ONE_HUNDRED)
 
-    private fun getHighestNumberOfVotes(candidates: Map<Candidate, Int>): Double =
-        candidates.map { it.value.toDouble() }
-                .maxOf { it }
 
     private fun getTotalVotes(candidates: Map<Candidate, Int>): Double =
         candidates.map { it.value.toDouble() }
