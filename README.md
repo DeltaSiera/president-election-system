@@ -10,7 +10,7 @@
 
 # How to use the system ?
 **Run** : `./gradlew bootRun`  
-**URL: "/api/elections/candidates"**
+**URL: "localhost:8080/api/elections/candidates"**
 
 ## Fetch all candidates
 
