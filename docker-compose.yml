@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  election-service:
+    container_name: election-app
+    build: .
+    ports:
+      - "8080:8080"
