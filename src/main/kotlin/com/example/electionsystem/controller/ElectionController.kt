@@ -37,5 +37,4 @@ class ElectionController(
     @GetMapping(value = ["/votes/regions"])
     fun getVotesDistributionPerRegions(): List<RegionDto> =
         voteService.countVotesPerRegion()
-
 }
