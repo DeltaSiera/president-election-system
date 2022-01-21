@@ -13,8 +13,7 @@ class ElectionsErrorAdviser : ResponseEntityExceptionHandler() {
 
     @ExceptionHandler(IllegalStateException::class)
     fun handleToManyCandidates(tooMany: IllegalStateException): ResponseEntity<ErrorDto> =
-        ResponseEntity.status(HttpStatus.FORBIDDEN)
-                .body(tooMany.message?.let { ErrorDto(it) })
+        generateErrorCause(HttpStatus.FORBIDDEN, tooMany.message)
 
     @ExceptionHandler(NoSuchElementException::class)
     fun handleNoVoter(notfound: NoSuchElementException): ResponseEntity<ErrorDto> =
@@ -26,6 +25,5 @@ class ElectionsErrorAdviser : ResponseEntityExceptionHandler() {
 
     private fun generateErrorCause(status: HttpStatus, message: String?): ResponseEntity<ErrorDto> = ResponseEntity
             .status(status)
-            .body(message?.let { ErrorDto(it) })
-
+            .body(message?.let { ErrorDto(it) } ?: ErrorDto(message = "Something is not okay"))
 }
