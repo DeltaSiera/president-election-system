@@ -38,10 +38,10 @@ class VoteService(
             ?: throw NoSuchElementException("Candidate $candidateNumber does not exist!")
     }
 
-    fun checkIfVoteIsPresent(voter: Voter) {
-        require(voteRepo.findByVoter(voter) == null) { "${voter.Id} have already voted for another candidate!" }
-    }
+    fun checkIfVoteIsPresent(voter: Voter) =
+        require(voteIsNoRegisteredFrom(voter)) { "${voter.Id} have already voted for another candidate!" }
 
+    private fun voteIsNoRegisteredFrom(voter: Voter) = voteRepo.findByVoter(voter) == null
 
     fun countVotesPerRegion(): List<RegionDto> =
         voteRepo.findAll()
@@ -49,20 +49,17 @@ class VoteService(
                 .mapValues { (_, votes) -> groupVotesByCandidate(votes) }
                 .let(::mapToRegionDto)
 
-
     private fun groupByRegion(vote: Vote): String = vote.voter.region.name
 
     private fun groupVotesByCandidate(votes: List<Vote>): Map<Candidate, Int> =
         votes.groupingBy { it.candidate }
                 .eachCount()
 
-
     fun countVotesPerCandidate(): List<VoteDto> =
         candidateRepo.findAll()
                 .map { VoteDto(mapToCandidateDto(it), countCandidateVotes(it)) }
 
     fun countCandidateVotes(candidate: Candidate): Int = voteRepo.countVotesByCandidate(candidate)
-
 }
 
 
